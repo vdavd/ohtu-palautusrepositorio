@@ -57,5 +57,11 @@ class TestStatisticsService(unittest.TestCase):
 
         self.assertListEqual(names, ["Gretzky", "Yzerman", "Lemieux"])
 
+    def test_incorrect_sortby_returns_points(self):
+        vastaus = self.stats.top(3, 123)
+
+        names = [player.name for player in vastaus]
+
+        self.assertListEqual(names, ["Gretzky", "Lemieux", "Yzerman"])
 
     

@@ -34,6 +34,8 @@ class StatisticsService:
                 return player.goals
             elif sort == SortBy.ASSISTS:
                 return player.assists
+            else:
+                return player.points
 
         sorted_players = sorted(
             self._reader.get_players(),
