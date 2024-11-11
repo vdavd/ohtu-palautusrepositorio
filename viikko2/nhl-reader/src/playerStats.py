@@ -6,13 +6,13 @@ class PlayerStats:
 
     def top_scorers_by_nationality(self, nationality: str):
             
-        def nat_player_func(player, nationality):
+        def nat_player_func(player):
             if player.nationality == nationality:
                 return True
             else:
                 return False
             
-        nat_players = filter(nat_player_func(nationality), self.players)
+        nat_players = filter(nat_player_func, self.players)
 
         ordered_players = sorted(nat_players, key=lambda player: player.goals + player.assists, reverse=True)
 
